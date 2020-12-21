@@ -1,0 +1,899 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass heb-article
+\use_default_options true
+\maintain_unincluded_children false
+\language hebrew
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0bp
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+מסדי נתונים - תרגיל
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+5
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+-
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+Join Algorithms
+\end_layout
+
+\begin_layout Author
+מיכל לוי -
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+313573743
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+, רועי בן יוסף -
+\family roman
+\series medium
+\shape up
+\size large
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+307920116
+\end_layout
+
+\begin_layout Part*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+1
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשתמש באלגוריתם שלמדנו בכיתה ע
+\begin_inset Quotes erd
+\end_inset
+
+מ למצוא את כל המפתחות:
+\end_layout
+
+\begin_layout Standard
+ראשית נמצא מפתח כלשהו ע
+\begin_inset Quotes erd
+\end_inset
+
+י שימוש ב-
+\begin_inset Formula $minimize$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+נראה כי הסגור של 
+\begin_inset Formula $\{ID,Year,Season,City,Event\}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+כולל בתוכו את כל היחס ולכן מפתח על.
+\end_layout
+
+\begin_layout Standard
+הסרה של 
+\begin_inset Formula $City$
+\end_inset
+
+, אינה משנה את הסגור מכיוון ש: 
+\begin_inset Formula $Year,Season\to City$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+הסרה של כל אחד מהאלמנטים האחרים ב 
+\begin_inset Formula $\{ID,Year,Season,Event\}$
+\end_inset
+
+ דווקא כן משנה את הסגור, 
+\end_layout
+
+\begin_layout Standard
+ולכן הוא 
+\series bold
+מפתח 
+\end_layout
+
+\begin_layout Standard
+בנוסף ניתן להבחין כי האלמנטים הללו לא נמצאים בצד ימין של אף יחס גרירה.
+\end_layout
+
+\begin_layout Standard
+כלומר:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\forall X\to Y\in F\\
+Y\cap\{ID,Year,Season,Event\}=\emptyset
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+לכן זהו המפתח 
+\series bold
+היחיד
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+מכיוון שכל אטריביוט בטבלה מכיל ערך אטומי, ומכיוון שאין אטריביוטים שחוזרים
+ על עצמם,
+\end_layout
+
+\begin_layout Standard
+הטבלה בצורה נורמלית ראשונה.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+נשלול התאמה ל
+\begin_inset Formula $3NF$
+\end_inset
+
+ 
+\begin_inset Formula $BCNF$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+3
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+נתון הפירוק:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{l}
+\mathrm{R}_{1}=(\mathrm{ID},\text{ Year, Season, Name, Sex, Age, Height, Weight) }\\
+\mathrm{R}_{2}=(\mathrm{ID},\text{ Year, Season, City, Team, Event, Sport, Medal) }\\
+\mathrm{R}_{3}=(\mathrm{Team},\mathrm{NOC})
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשתמש באלגוריתם שלמדנו ע
+\begin_inset Quotes erd
+\end_inset
+
+מ לבדוק אם הפירוק הוא ללא אובדן:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נבחין כי לאחר תיקון הסתירות בגרירה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{ ID, Year, Season, City }\rightarrow\text{ Name, Sex, Age, Height, Weight, Team, NOC }
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+שורה 
+\begin_inset Formula $R2$
+\end_inset
+
+ מכילה כולה ערכי 
+\begin_inset Formula $a$
+\end_inset
+
+ .
+ לכן הפירוק חסר אובדן.
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+4
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+נמצא אם קיימת צורה נורמלית כלשהי.
+\end_layout
+
+\begin_layout Standard
+ראשית נמצא כיסוי מינימלי:
+\end_layout
+
+\begin_layout Standard
+נתחיל עם 
+\begin_inset Formula $F$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+F=\{\\
+\mathrm{ID}\rightarrow\text{ Name, Sex }\\
+\text{ Year, Season }\rightarrow\text{ City }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Name, Sex, Age, Height, Weight, Team, NOC }\\
+\text{ Event }\rightarrow\text{ sport }\\
+\text{ Team }\rightarrow\text{ NOC }\\
+\text{ NOC, Year }\rightarrow\text{ Team }\\
+\text{ ID, Year, Season, Team, NOC, Event }\rightarrow\text{ sport, Medal }\\
+\}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נפרק את צד ימין של כל גרירה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+G_{1}=\{\\
+\mathrm{ID}\rightarrow\text{ Name }\\
+\mathrm{ID}\rightarrow\text{  Sex }\\
+\text{ Year, Season }\rightarrow\text{ City }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Name }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Sex }\\
+\text{ ID, Year, Season, City }\rightarrow\text{  Age }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Height }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Weight }\\
+\text{ ID, Year, Season, City }\rightarrow\text{Team }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ NOC }\\
+\text{ Event }\rightarrow\text{ sport }\\
+\text{ Team }\rightarrow\text{ NOC }\\
+\text{ NOC, Year }\rightarrow\text{ Team }\\
+\text{ ID, Year, Season, Team, NOC, Event }\rightarrow\text{ sport }\\
+\text{ ID, Year, Season, Team, NOC, Event }\rightarrow\text{ Medal }\\
+\}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נסיר גרירות מיותרות:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+G_{2}=\{\\
+\mathrm{ID}\rightarrow\text{ Name }\\
+\mathrm{ID}\rightarrow\text{ Sex }\\
+\text{ Year, Season }\rightarrow\text{ City }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Age }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Height }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Weight }\\
+\text{ ID, Year, Season, City }\rightarrow\text{Team }\\
+\text{ Event }\rightarrow\text{ sport }\\
+\text{ Team }\rightarrow\text{ NOC }\\
+\text{ NOC, Year }\rightarrow\text{ Team }\\
+\text{ ID, Year, Season, Team, NOC, Event }\rightarrow\text{ Medal }\\
+\}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נקטין את צד שמאל של הגרירה במידת האפשר:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+G_{3}=\{\\
+\mathrm{ID}\rightarrow\text{ Name }\\
+\mathrm{ID}\rightarrow\text{ Sex }\\
+\text{ Year, Season }\rightarrow\text{ City }\\
+\text{ ID, Year, Season }\rightarrow\text{ Age }\\
+\text{ ID, Year, Season }\rightarrow\text{ Height }\\
+\text{ ID, Year, Season }\rightarrow\text{ Weight }\\
+\text{ ID, Year, Season }\rightarrow\text{Team }\\
+\text{ Event }\rightarrow\text{ sport }\\
+\text{ Team }\rightarrow\text{ NOC }\\
+\text{ NOC, Year }\rightarrow\text{ Team }\\
+\text{ ID, Year, Season, Event }\rightarrow\text{ Medal }\\
+\}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+וקיבלנו כיסוי מינימלי.
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+5
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+האלגוריתם למציאת פירוק מתאים ל
+\begin_inset Formula $3NF$
+\end_inset
+
+ הוא מציאת כיסוי מינימלי,
+\end_layout
+
+\begin_layout Standard
+הוספת כל היחסים שבכיסוי כפירוק, והוספת מפתח אם נדרש.
+\end_layout
+
+\begin_layout Standard
+לא נדרש להוסיף מפתח מכיוון שהמפתח היחיד של הטבלה )שאותו מצאנו בסעיף
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\numeric off
+( כבר מופיע כחלק מהכיסוי המינימלי: 
+\begin_inset Formula $ID,Year,Season,Event$
+\end_inset
+
+.
+ לכן הפירוק ל
+\begin_inset Formula $3NF$
+\end_inset
+
+ הוא:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+R_{1}=\left(\mathrm{ID},\text{ Name }\right)\\
+R_{2}=\left(\mathrm{ID},\text{ Sex }\right)\\
+R_{3}=\left(\text{ Year, Season },\text{ City }\right)\\
+R_{4}=\left(\text{ ID, Year, Season },\text{ Age }\right)\\
+R_{5}=\left(\text{ ID, Year, Season },\text{ Height }\right)\\
+R_{6}=\left(\text{ ID, Year, Season },\text{ Weight }\right)\\
+R_{7}=\left(\text{ ID, Year, Season },\text{Team }\right)\\
+R_{8}=\left(\text{ Event },\text{ sport }\right)\\
+R_{9}=\left(\text{ Team },\text{ NOC }\right)\\
+R_{10}=\left(\text{ NOC, Year },\text{ Team }\right)\\
+R_{11}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב כי 
+\begin_inset Formula $R_{9}\subset R_{10}$
+\end_inset
+
+ולכן נוותר על 
+\begin_inset Formula $R_{9}$
+\end_inset
+
+ ונקבל:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+R_{1}=\left(\mathrm{ID},\text{ Name }\right)\\
+R_{2}=\left(\mathrm{ID},\text{ Sex }\right)\\
+R_{3}=\left(\text{ Year, Season },\text{ City }\right)\\
+R_{4}=\left(\text{ ID, Year, Season },\text{ Age }\right)\\
+R_{5}=\left(\text{ ID, Year, Season },\text{ Height }\right)\\
+R_{6}=\left(\text{ ID, Year, Season },\text{ Weight }\right)\\
+R_{7}=\left(\text{ ID, Year, Season },\text{Team }\right)\\
+R_{8}=\left(\text{ Event },\text{ sport }\right)\\
+R_{9}=\left(\text{ NOC, Year },\text{ Team }\right)\\
+R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+לבדוק מה הצורה הנורמלית של כל טבלה כאן
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+6
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+נחכה עם זה
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+7
+\numeric off
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+נחכה עם זה
+\end_layout
+
+\begin_layout Part*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+א.
+\end_layout
+
+\begin_layout Standard
+מכיוון שלספרים שונים בהכרח יש שמות שונים, ניתן להסיק ששם הספר גורר את הדברים
+ הבאים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+Name\to Author\\
+Name\to User\,Rating\\
+Name\to Reviews\\
+Name\to Price\\
+Name\to Genre
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ב.
+\end_layout
+
+\begin_layout Standard
+מכיוון שאי אפשר להסיק את 
+\begin_inset Formula $Year$
+\end_inset
+
+ מ-
+\begin_inset Formula $Name$
+\end_inset
+
+, ואפשר להסיק את כל שאר השדות מ-
+\begin_inset Formula $Name$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+המפתח היחיד יהיה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Name,Year
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
