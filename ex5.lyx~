@@ -289,8 +289,32 @@ Join Algorithms
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename pasted1.png
+ע
+\begin_inset Quotes erd
+\end_inset
+
+פ 
+\begin_inset Formula $F$
+\end_inset
+
+ שנתון:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+F=\{\\
+\mathrm{ID}\rightarrow\text{ Name, Sex }\\
+\text{ Year, Season }\rightarrow\text{ City }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Name, Sex, Age, Height, Weight, Team, NOC }\\
+\text{ Event }\rightarrow\text{ sport }\\
+\text{ Team }\rightarrow\text{ NOC }\\
+\text{ NOC, Year }\rightarrow\text{ Team }\\
+\text{ ID, Year, Season, Team, NOC, Event }\rightarrow\text{ sport, Medal }\\
+\}
+\end{array}
+\]
 
 \end_inset
 
@@ -408,17 +432,37 @@ Y\cap\{ID,Year,Season,Event\}=\emptyset
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-נשלול התאמה ל
-\begin_inset Formula $3NF$
-\end_inset
-
- 
+ניתן לשלול התאמה ל-
 \begin_inset Formula $BCNF$
 \end_inset
 
+ ול-
+\begin_inset Formula $3NF$
+\end_inset
+
+ בעזרת יחס הגרירה 
+\begin_inset Formula $\text{ Team }\rightarrow\text{ NOC }$
+\end_inset
+
  .
+ זאת מכיוון שהיחס לא טריוויאלי,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Team$
+\end_inset
+
+ הוא אינו מפתח על, ו-
+\begin_inset Formula $NOC$
+\end_inset
+
+ לא חלק מאף מפתח.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+.
 \end_layout
 
 \begin_layout Standard
@@ -465,7 +509,8 @@ Y\cap\{ID,Year,Season,Event\}=\emptyset
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted2.png
+	filename pasted7.png
+	scale 50
 
 \end_inset
 
@@ -562,11 +607,11 @@ F=\{\\
 \begin{array}{c}
 G_{1}=\{\\
 \mathrm{ID}\rightarrow\text{ Name }\\
-\mathrm{ID}\rightarrow\text{  Sex }\\
+\mathrm{ID}\rightarrow\text{ Sex }\\
 \text{ Year, Season }\rightarrow\text{ City }\\
 \text{ ID, Year, Season, City }\rightarrow\text{ Name }\\
 \text{ ID, Year, Season, City }\rightarrow\text{ Sex }\\
-\text{ ID, Year, Season, City }\rightarrow\text{  Age }\\
+\text{ ID, Year, Season, City }\rightarrow\text{ Age }\\
 \text{ ID, Year, Season, City }\rightarrow\text{ Height }\\
 \text{ ID, Year, Season, City }\rightarrow\text{ Weight }\\
 \text{ ID, Year, Season, City }\rightarrow\text{Team }\\
@@ -767,9 +812,15 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 \end_layout
 
 \begin_layout Standard
+בפירוק 
+\begin_inset Formula $3NF$
+\end_inset
 
-\series bold
-לבדוק מה הצורה הנורמלית של כל טבלה כאן
+ הצורה הנורמלית של כל טבלה היא 
+\begin_inset Formula $3NF$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -781,9 +832,62 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 \end_layout
 
 \begin_layout Standard
+נריץ את האלגוריתם למציאת פירוק 
+\begin_inset Formula $BCNF$
+\end_inset
 
-\series bold
-נחכה עם זה
+.
+\end_layout
+
+\begin_layout Standard
+מצורף פירוט של האלגוריתם בדיאגרמה, כשבכחול מסומנת הגרירה שהפרה את 
+\begin_inset Formula $BCNF$
+\end_inset
+
+באותו
+\end_layout
+
+\begin_layout Standard
+השלב ולפיה פירקנו, ובסגול מסומנים היחסים הסופיים אליהם פירקנו את הטבלה.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+היחסים שהתקבלו בסוף הם:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+R_{1}=(ID,Name,Sex)\\
+R_{2}=(Team,NOC)\\
+R_{3}=(Year,Season,City)\\
+R_{4}=(ID,Year,Season,Height,Weight,Team)\\
+R_{5}=(Event,Sport)\\
+R_{6}=(ID,Year,Season,Event,Medal)
+\end{array}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -796,9 +900,50 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 \end_layout
 
 \begin_layout Standard
+הטבלה לא משמרת תלות.
+ לדוגמה יחס הגרירה:
+\end_layout
 
-\series bold
-נחכה עם זה
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Z=NOC,Year\to Team=Y
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+מקיים לכל 
+\begin_inset Formula $R_{i}$
+\end_inset
+
+ 
+\begin_inset Formula $Z\cap R_{i}=\emptyset,\{Year\},\{NOC\}\,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+והסגור של אף אחת מהקבוצת האלה אינו מאפשר הרחבה של הקבוצות.
+\end_layout
+
+\begin_layout Standard
+כלומר:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\emptyset^{+},\{Year\}^{+},\{NOC\}^{+}=\emptyset,\{Year\},\{NOC\}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
@@ -848,7 +993,7 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 \[
 \begin{array}{c}
 Name\to Author\\
-Name\to User\,Rating\\
+Name\to User\_Rating\\
 Name\to Reviews\\
 Name\to Price\\
 Name\to Genre
@@ -893,6 +1038,642 @@ Name,Year
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+ג.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+מכיוון שאין אטריביוטים שחוזרים על עצמם, ומכיוון שכל אטריביוט מכיל ערך אטומי,
+\end_layout
+
+\begin_layout Standard
+הטבלה היא מצורה נומרלית ראשונה.
+ 
+\end_layout
+
+\begin_layout Standard
+בנוסף ניתן לראות שלא מתאים ל-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ ול-
+\begin_inset Formula $3NF$
+\end_inset
+
+ מכיוון שיחס הגרירה 
+\begin_inset Formula $Name\to Author$
+\end_inset
+
+ אינו טריוויאלי,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Name$
+\end_inset
+
+ אינו מפתח על, ו-
+\begin_inset Formula $Author$
+\end_inset
+
+ אינו חלק מאף מפתח
+\end_layout
+
+\begin_layout Standard
+ד.
+ נוסיף את השאילתה ואת התוצאות:
+\end_layout
+
+\begin_layout Standard
+שאילתה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted9.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+תוצאות:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted8.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ה.
+ מסקירת השאילתה השלמה )המציגה את כל העמודות( התלויות הבאות אינן נשמרות:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+Name\to User\_Rating\\
+Name\to Reviews\\
+Name\to Price
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+התלויות האחרות נשמרות.
+\end_layout
+
+\begin_layout Standard
+נשתמש בפירוק ל-
+\begin_inset Formula $3NF$
+\end_inset
+
+, מכיוון שהוא ללא אובדן, ומשמר תלות.
+\end_layout
+
+\begin_layout Standard
+כיסוי מינימלי כבר מצאנו, ולכן עבור התלויות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+Name\to Author\\
+Name\to User\_Rating\\
+Name\to Reviews\\
+Name\to Price\\
+Name\to Genre
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נוסיף את היחסים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+R_{1}=\left(Name,Author\right)\\
+R_{2}=\left(Name,User\_Rating\right)\\
+R_{3}=\left(Name,Reviews\right)\\
+R_{4}=\left(Name,Price\right)\\
+R_{5}=\left(Name,Genre\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $Name$
+\end_inset
+
+ יהיה המפתח בכל תת יחס.
+\end_layout
+
+\begin_layout Standard
+בנוסף, מכיוון שאנו עדיין צריכים טבלת מפתח, נוסיף את היחס:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{6}=\left(Name,Year\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב שמכיוון שבכל אחד מהיחסים 
+\begin_inset Formula $R_{1},...,R_{6}$
+\end_inset
+
+ 
+\begin_inset Formula $Name$
+\end_inset
+
+ הוא המפתח, לא מופרת אף תלות פונקציונלית.
+\end_layout
+
+\begin_layout Part*
+שאלה
+\family roman
+\series bold
+\shape up
+\size larger
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+3
+\numeric off
+ 
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+1
+\numeric off
+.
+ ניתן את הדוגמה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=(A,B,C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=(A\to B)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{1}=(A,B),R_{2}=(C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הפירוק משמר את התלות הפונקציונלית היחידה, אך נאבד מידע.
+\end_layout
+
+\begin_layout Standard
+ניתן לוודא ע
+\begin_inset Quotes erd
+\end_inset
+
+י הרצת האלגוריתם שלמדנו :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+2
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ניתן את הדוגמה הבאה:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R=(A,B,C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F=(B\to C,A\to C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{1}=(A,B),R_{2}=(B,C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הפירוק הוא ללא אובדן:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אך התלות הפונקציונלית 
+\begin_inset Formula $A\to C$
+\end_inset
+
+ לא נשמרת, מכיוון ש:
+\begin_inset Formula 
+\[
+\begin{array}{c}
+A^{+}\cap R_{1}=A\\
+A^{+}\cap R_{2}=\emptyset
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר לעולם לא נוכל להרחיב את 
+\begin_inset Formula $A$
+\end_inset
+
+ ל-
+\begin_inset Formula $AC$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+3
+\numeric off
+.
+\end_layout
+
+\begin_layout Standard
+נכון.
+\end_layout
+
+\begin_layout Standard
+בשיעור הראנו שאם יחס הוא ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ אז הוא בהכרח גם ב-
+\begin_inset Formula $3NF$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+נוכיח למקרה זה גם את הצד השני:
+\end_layout
+
+\begin_layout Standard
+נניח שהיחס הוא ב-
+\begin_inset Formula $3NF$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ע
+\begin_inset Quotes erd
+\end_inset
+
+מ שיחס יהיה ב-
+\begin_inset Formula $3NF$
+\end_inset
+
+ חייב להתקיים
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ לפחות 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מהדברים הבאים לכל 
+\begin_inset Formula $X\to Y\in F$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+1
+\numeric off
+.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ הוא מפתח על
+\end_layout
+
+\begin_layout Standard
+
+\numeric on
+2
+\numeric off
+.
+ לכל 
+\begin_inset Formula $A\in Y$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+א.
+ או ש 
+\begin_inset Formula $A\in X$
+\end_inset
+
+ ולכן טריוויאלי
+\end_layout
+
+\begin_layout Standard
+ב.
+ או ש-
+\begin_inset Formula $A$
+\end_inset
+
+ הוא חלק ממפתח.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+במידה ו-
+\begin_inset Formula $X$
+\end_inset
+
+ הוא מפתח על, הטבלה היא ב
+\begin_inset Formula $BCNF$
+\end_inset
+
+ ואם כן, סיימנו.
+\end_layout
+
+\begin_layout Standard
+במידה ולכל 
+\begin_inset Formula $A\in Y$
+\end_inset
+
+ מתקיים 
+\begin_inset Formula $A\in X$
+\end_inset
+
+ היחס הוא טריוויאלי ולכן הטבלה ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ ולכן סיימנו
+\end_layout
+
+\begin_layout Standard
+לכן נניח שקיים 
+\begin_inset Formula $A$
+\end_inset
+
+שלא מוכל ב-
+\begin_inset Formula $X$
+\end_inset
+
+ ולכן חייב להיות חלק ממפתח.
+\end_layout
+
+\begin_layout Standard
+במקרה שלנו, ה
+\begin_inset Formula $A$
+\end_inset
+
+ היחיד המוכל ב-
+\begin_inset Formula $Y$
+\end_inset
+
+ הוא 
+\begin_inset Formula $A$
+\end_inset
+
+ עצמו.
+ לכן אם הוא חלק ממפתח, מתקיים מכך שצד
+\end_layout
+
+\begin_layout Standard
+ימין של כל יחס הוא 
+\begin_inset Formula $A$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A(X\setminus\{A\})\to A
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כלומר 
+\begin_inset Formula $A$
+\end_inset
+
+ ועוד תת קבוצה כלשהי של 
+\begin_inset Formula $\{B,C,D,E\}$
+\end_inset
+
+ גוררים את 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+אפשר לראות שיחס גרירה זה הוא טריוויאלי, ולכן היחס גם במקרה זה הוא ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+כנדרש.
 \end_layout
 
 \end_body
