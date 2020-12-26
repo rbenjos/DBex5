@@ -1,8 +1,9 @@
 CREATE TABLE bestsellers(
-Name varchar(150),
-Author varchar(150),
-User_Rating double precision,
+Name varchar,
+Author varchar,
+User_Rating float,
 Reviews integer,
+Price integer,
 Year integer,
-Genre varchar(150)
+Genre varchar
 );
