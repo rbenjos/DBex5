@@ -159,7 +159,7 @@
 \noun default
 \color inherit
 \lang english
-Join Algorithms
+Design Theory
 \end_layout
 
 \begin_layout Author
@@ -510,7 +510,7 @@ Y\cap\{ID,Year,Season,Event\}=\emptyset
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted7.png
-	scale 70
+	scale 50
 
 \end_inset
 
@@ -820,7 +820,206 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 \begin_inset Formula $3NF$
 \end_inset
 
+ או 
+\begin_inset Formula $BCNF$
+\end_inset
 
+.
+\end_layout
+
+\begin_layout Standard
+במקרה זה 
+\begin_inset Formula $R_{1},R_{2},R_{8}$
+\end_inset
+
+ הן ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ מהיותן יחסים עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+אטריוביוטים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{3}$
+\end_inset
+
+ הוא גם כן ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ מכיוון שהתלות היחידה הלא טריוויאלית ב-
+\begin_inset Formula $F_{R_{3}}$
+\end_inset
+
+ היא 
+\begin_inset Formula $Year,Season\to city$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+ובה צד שמאל הוא מפתח על.
+\end_layout
+
+\begin_layout Standard
+כמו כן 
+\begin_inset Formula $R_{4},...,R_{7}$
+\end_inset
+
+ הן גם ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ מכיוון שהיחסים הלא טריוויאליים היחידים ב- 
+\begin_inset Formula $F_{R_{4}},...,F_{R_{7}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הם:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\text{ ID, Year, Season }\rightarrow\text{ Age }\\
+\text{ ID, Year, Season }\rightarrow\text{ Height }\\
+\text{ ID, Year, Season }\rightarrow\text{ Weight }\\
+\text{ ID, Year, Season }\rightarrow\text{Team }
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+בהתאמה, בהם צד שמאל הוא מפתח על.
+\end_layout
+
+\begin_layout Standard
+מאותה סיבה, 
+\begin_inset Formula $R_{10}$
+\end_inset
+
+ הוא גם ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+, התלות הלא טריוויאלית היחידה ב-
+\begin_inset Formula $F_{R_{10}}$
+\end_inset
+
+ היא
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{ ID, Year, Season, Event }\rightarrow\text{ Medal }
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+בה צד שמאל הוא מפתח על.
+\end_layout
+
+\begin_layout Standard
+רק 
+\begin_inset Formula $R_{8}$
+\end_inset
+
+היא ב-
+\begin_inset Formula $3NF$
+\end_inset
+
+ ולא ב-
+\begin_inset Formula $BCNF$
+\end_inset
+
+ מכיוון שהתלות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Team\to NOC
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+הנמצאת ב-
+\begin_inset Formula $F_{R_{8}}$
+\end_inset
+
+ אינה טריוויאלית וצד שמאל בה הוא לא מפתח על.
 \end_layout
 
 \begin_layout Standard
@@ -853,8 +1052,9 @@ R_{10}=\left(\text{ ID, Year, Season, Event },\text{ Medal }\right)
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted3.png
-	scale 80
+	filename pasted10.png
+	lyxscale 50
+	scale 50
 
 \end_inset
 
@@ -1096,6 +1296,7 @@ Name,Year
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted9.png
+	scale 50
 
 \end_inset
 
@@ -1109,10 +1310,120 @@ Name,Year
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted8.png
+	scale 50
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+ה.
+ מסקירת השאילתה השלמה )המציגה את כל העמודות( התלויות הבאות אינן נשמרות:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+Name\to User\_Rating\\
+Name\to Reviews\\
+Name\to Price
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+התלויות האחרות נשמרות.
+\end_layout
+
+\begin_layout Standard
+נשתמש בפירוק ל-
+\begin_inset Formula $3NF$
+\end_inset
+
+, מכיוון שהוא ללא אובדן, ומשמר תלות.
+\end_layout
+
+\begin_layout Standard
+כיסוי מינימלי כבר מצאנו, ולכן עבור התלויות
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+Name\to Author\\
+Name\to User\_Rating\\
+Name\to Reviews\\
+Name\to Price\\
+Name\to Genre
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נוסיף את היחסים:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+R_{1}=\left(Name,Author\right)\\
+R_{2}=\left(Name,User\_Rating\right)\\
+R_{3}=\left(Name,Reviews\right)\\
+R_{4}=\left(Name,Price\right)\\
+R_{5}=\left(Name,Genre\right)
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כאשר 
+\begin_inset Formula $Name$
+\end_inset
+
+ יהיה המפתח בכל תת יחס.
+\end_layout
+
+\begin_layout Standard
+בנוסף, מכיוון שאנו עדיין צריכים טבלת מפתח, נוסיף את היחס:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+R_{6}=\left(Name,Year\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נשים לב שמכיוון שבכל אחד מהיחסים 
+\begin_inset Formula $R_{1},...,R_{6}$
+\end_inset
+
+ 
+\begin_inset Formula $Name$
+\end_inset
+
+ הוא המפתח, לא מופרת אף תלות פונקציונלית.
 \end_layout
 
 \begin_layout Part*
@@ -1462,7 +1773,11 @@ A^{+}\cap R_{2}=\emptyset
 \end_layout
 
 \begin_layout Standard
-במידה ו-
+
+\numeric on
+1
+\numeric off
+.במידה ו-
 \begin_inset Formula $X$
 \end_inset
 
@@ -1474,7 +1789,12 @@ A^{+}\cap R_{2}=\emptyset
 \end_layout
 
 \begin_layout Standard
-במידה ולכל 
+
+\numeric on
+2
+\numeric off
+.
+ במידה ולכל 
 \begin_inset Formula $A\in Y$
 \end_inset
 
@@ -1490,11 +1810,11 @@ A^{+}\cap R_{2}=\emptyset
 \end_layout
 
 \begin_layout Standard
-לכן נניח שקיים 
+נניח בשלילה שהיחס לא טריוויאלי, כלומר 
 \begin_inset Formula $A$
 \end_inset
 
-שלא מוכל ב-
+ לא מוכל ב-
 \begin_inset Formula $X$
 \end_inset
 
@@ -1502,34 +1822,33 @@ A^{+}\cap R_{2}=\emptyset
 \end_layout
 
 \begin_layout Standard
-במקרה שלנו, ה
-\begin_inset Formula $A$
-\end_inset
-
- היחיד המוכל ב-
-\begin_inset Formula $Y$
-\end_inset
-
- הוא 
-\begin_inset Formula $A$
-\end_inset
-
- עצמו.
- לכן אם הוא חלק ממפתח, מתקיים מכך שצד
+מהגדרת היחס
 \end_layout
 
 \begin_layout Standard
-ימין של כל יחס הוא 
+המפתח היחיד ביחס זה הוא אך 
 \begin_inset Formula $A$
 \end_inset
 
-:
+
+\end_layout
+
+\begin_layout Standard
+אינו יכול להיות חלק ממפתח, כי אם 
+\begin_inset Formula $X'$
+\end_inset
+
+ קבוצת האטריביוטים מלבד 
+\begin_inset Formula $A$
+\end_inset
+
+ במפתח, מתקיים
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A(X\setminus\{A\})\to A
+X'A\to A
 \]
 
 \end_inset
